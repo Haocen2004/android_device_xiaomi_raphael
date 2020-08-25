@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.util.Log;
 
 import java.util.List;
@@ -89,6 +90,10 @@ public class ThermalService extends Service {
 
         @Override
         public void run() {
+            if (Settings.System.getInt(context.getContentResolver(), Settings.System.GAMING_MODE_ACTIVE, 0) == 1) {
+                mHandler.postDelayed(this, 5000);
+                return;
+            }
             ActivityManager manager = context.getSystemService(ActivityManager.class);
             List<ActivityManager.RunningTaskInfo> runningTasks = manager.getRunningTasks(1);
             if (runningTasks != null && runningTasks.size() > 0) {
