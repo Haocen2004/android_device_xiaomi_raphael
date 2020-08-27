@@ -135,6 +135,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.raphael
 
+# Performance
+PRODUCT_PACKAGES += \
+    powerctl
+
 # Ril
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4
