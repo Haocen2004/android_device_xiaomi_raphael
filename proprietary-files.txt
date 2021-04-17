@@ -1,6 +1,6 @@
 # Audio
-vendor/lib64/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib64/soundfx/libvolumelistener.so|5e47ee679a500e3452160e390a42f210b415a039
-vendor/lib/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib/soundfx/libvolumelistener.so|74bd1983958010a74b66d46018b033498202bf19
+vendor/lib/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib/soundfx/libvolumelistener.so|eccf8e24f178f3679f9309be0d92234b4cb58489
+vendor/lib64/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib64/soundfx/libvolumelistener.so|abb573d099b777d4f4e85960778999b3a92a393e
 
 # Alarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
@@ -37,27 +37,6 @@ product/lib64/vendor.qti.hardware.data.qmi@1.0.so
 # Diag
 lib64/libdiag_system.so
 lib/libdiag_system.so
-
-# DPM
-framework/tcmclient.jar
-product/bin/dpmd
-product/etc/dpm/dpm.conf
-product/etc/init/dpmd.rc
-product/etc/permissions/com.qti.dpmframework.xml
-product/etc/permissions/dpmapi.xml
-product/framework/com.qti.dpmframework.jar
-product/framework/dpmapi.jar
-product/lib64/com.qualcomm.qti.dpm.api@1.0.so
-product/lib64/libdpmctmgr.so
-product/lib64/libdpmfdmgr.so
-product/lib64/libdpmframework.so
-product/lib64/libdpmtcm.so
-product/lib/com.qualcomm.qti.dpm.api@1.0.so
-product/lib/libdpmctmgr.so
-product/lib/libdpmfdmgr.so
-product/lib/libdpmframework.so
-product/lib/libdpmtcm.so
--product/priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # Display postprocessing
 product/lib64/libsdm-disp-apis.qti.so
@@ -108,9 +87,42 @@ product/lib64/vendor.qti.imsrtpservice@2.1.so
 # Input
 etc/excluded-input-devices.xml
 
-# HotwordEnrollment
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk;PRESIGNED
+# Modules
+vendor/lib/modules/audio_adsp_loader.ko:product/vendor_overlay/29/lib/modules/audio_adsp_loader.ko
+vendor/lib/modules/audio_apr.ko:product/vendor_overlay/29/lib/modules/audio_apr.ko
+vendor/lib/modules/audio_cs35l41.ko:product/vendor_overlay/29/lib/modules/audio_cs35l41.ko
+vendor/lib/modules/audio_hdmi.ko:product/vendor_overlay/29/lib/modules/audio_hdmi.ko
+vendor/lib/modules/audio_machine_msmnile.ko:product/vendor_overlay/29/lib/modules/audio_machine_msmnile.ko
+vendor/lib/modules/audio_mbhc.ko:product/vendor_overlay/29/lib/modules/audio_mbhc.ko
+vendor/lib/modules/audio_native.ko:product/vendor_overlay/29/lib/modules/audio_native.ko
+vendor/lib/modules/audio_pinctrl_wcd.ko:product/vendor_overlay/29/lib/modules/audio_pinctrl_wcd.ko
+vendor/lib/modules/audio_platform.ko:product/vendor_overlay/29/lib/modules/audio_platform.ko
+vendor/lib/modules/audio_q6.ko:product/vendor_overlay/29/lib/modules/audio_q6.ko
+vendor/lib/modules/audio_q6_notifier.ko:product/vendor_overlay/29/lib/modules/audio_q6_notifier.ko
+vendor/lib/modules/audio_q6_pdr.ko:product/vendor_overlay/29/lib/modules/audio_q6_pdr.ko
+vendor/lib/modules/audio_stub.ko:product/vendor_overlay/29/lib/modules/audio_stub.ko
+vendor/lib/modules/audio_swr_ctrl.ko:product/vendor_overlay/29/lib/modules/audio_swr_ctrl.ko
+vendor/lib/modules/audio_swr.ko:product/vendor_overlay/29/lib/modules/audio_swr.ko
+vendor/lib/modules/audio_tas2557.ko:product/vendor_overlay/29/lib/modules/audio_tas2557.ko
+vendor/lib/modules/audio_tfa98xx.ko:product/vendor_overlay/29/lib/modules/audio_tfa98xx.ko
+vendor/lib/modules/audio_usf.ko:product/vendor_overlay/29/lib/modules/audio_usf.ko
+vendor/lib/modules/audio_wcd934x.ko:product/vendor_overlay/29/lib/modules/audio_wcd934x.ko
+vendor/lib/modules/audio_wcd9360.ko:product/vendor_overlay/29/lib/modules/audio_wcd9360.ko
+vendor/lib/modules/audio_wcd9xxx.ko:product/vendor_overlay/29/lib/modules/audio_wcd9xxx.ko
+vendor/lib/modules/audio_wcd_core.ko:product/vendor_overlay/29/lib/modules/audio_wcd_core.ko
+vendor/lib/modules/audio_wcd_spi.ko:product/vendor_overlay/29/lib/modules/audio_wcd_spi.ko
+vendor/lib/modules/audio_wglink.ko:product/vendor_overlay/29/lib/modules/audio_wglink.ko
+vendor/lib/modules/audio_wsa881x.ko:product/vendor_overlay/29/lib/modules/audio_wsa881x.ko
+vendor/lib/modules/exfat.ko:product/vendor_overlay/29/lib/modules/exfat.ko
+vendor/lib/modules/modules.alias:product/vendor_overlay/29/lib/modules/modules.alias
+vendor/lib/modules/modules.dep:product/vendor_overlay/29/lib/modules/modules.dep
+vendor/lib/modules/mpq-adapter.ko:product/vendor_overlay/29/lib/modules/mpq-adapter.ko
+vendor/lib/modules/mpq-dmx-hw-plugin.ko:product/vendor_overlay/29/lib/modules/mpq-dmx-hw-plugin.ko
+vendor/lib/modules/qca_cld3_wlan.ko:product/vendor_overlay/29/lib/modules/qca_cld3_wlan.ko
+vendor/lib/modules/rmnet_perf.ko:product/vendor_overlay/29/lib/modules/rmnet_perf.ko
+vendor/lib/modules/rmnet_shs.ko:product/vendor_overlay/29/lib/modules/rmnet_shs.ko
+vendor/lib/modules/sla.ko:product/vendor_overlay/29/lib/modules/sla.ko
+vendor/lib/modules/tspp.ko:product/vendor_overlay/29/lib/modules/tspp.ko
 
 # Perf
 product/lib64/vendor.qti.hardware.iop@2.0.so
@@ -131,12 +143,20 @@ media/audio/ui/popup_muqin_down.ogg
 media/audio/ui/popup_muqin_up.ogg
 media/audio/ui/popup_yingyan_down.ogg
 media/audio/ui/popup_yingyan_up.ogg
+media/audio/ui/popup_imperial_march_down.ogg|fcee239fad64840c09b381335f86048cacc54832
+media/audio/ui/popup_imperial_march_up.ogg|584f94b79ce7b13a5f29d618ac35f949773625c9
+media/audio/ui/popup_lightsaber_down.ogg|6a3fa079443ff8b663b2294ac54a558263b935e2
+media/audio/ui/popup_lightsaber_up.ogg|18f78fc7bc485c3f233b496e7c4876625f03aab6
+media/audio/ui/popup_throne_room_down.ogg|0a250fbad938fb64cdf1d19220bf02e50811ffec
+media/audio/ui/popup_throne_room_up.ogg|e52d7c2a15f899a02ae02184a31ffe89f6bc167c
+media/audio/ui/popup_super_mario_down.ogg|8cb36a344e844c2909e5eaf0c5329c7043f0ad8f
+media/audio/ui/popup_super_mario_up.ogg|a3d022ef6b3654be67a55180b5a5150dfb837060
 
 # OMX
 lib/libstagefright_softomx.so
 
-# Power-off charging daemon
-bin/charger
+# Power-off charging daemon - from miui_CMI_20.9.28_171a6c0851_11.0.zip
+-bin/charger:bin/chargeonlymode|c745c3febb01b2b6a868a30ddb7bd8c1c343b3e7
 
 # RIL
 etc/permissions/privapp-permissions-qti.xml
@@ -152,59 +172,5 @@ product/framework/QtiTelephonyServicelibrary.jar
 product/framework/qcrilhook.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
-# Telephony (qti-telephony-common) - from DRG - QKQ1.190828.002
-product/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
-
 # Soter
 -app/SoterService/SoterService.apk
-
-# WiFi Display
-bin/wfdservice
-etc/init/wfdservice.rc
-etc/wfdconfigsink.xml
--framework/WfdCommon.jar
-lib64/libFileMux.so
-lib64/libmmosal.so
-lib64/libmmparser_lite.so
-lib64/libmmrtpdecoder.so
-lib64/libmmrtpencoder.so
-lib64/libwfdclient.so
-lib64/libwfdcommonutils.so
-lib64/libwfdconfigutils.so
-lib64/libwfdmminterface.so
-lib64/libwfdmmsink.so
-lib64/libwfdnative.so
-lib64/libwfdrtsp.so
-lib64/libwfdsinksm.so
-lib64/libwfdsm.so
-lib64/libwfduibcinterface.so
-lib64/libwfduibcsink.so
-lib64/libwfduibcsinkinterface.so
-lib64/libwfduibcsrc.so
-lib64/libwfduibcsrcinterface.so
-lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-lib/libFileMux.so
-lib/libmmosal.so
-lib/libmmparser_lite.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
-lib/libwfdaac.so
-lib/libwfdavenhancements.so
-lib/libwfdclient.so
-lib/libwfdcommonutils.so
-lib/libwfdconfigutils.so
-lib/libwfdmminterface.so
-lib/libwfdmmsink.so
-lib/libwfdmmsrc_system.so
-lib/libwfdrtsp.so
-lib/libwfdservice.so
-lib/libwfdsinksm.so
-lib/libwfdsm.so
-lib/libwfduibcinterface.so
-lib/libwfduibcsink.so
-lib/libwfduibcsinkinterface.so
-lib/libwfduibcsrc.so
-lib/libwfduibcsrcinterface.so
--priv-app/WfdService/WfdService.apk
-product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
-product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so

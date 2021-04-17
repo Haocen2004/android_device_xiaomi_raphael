@@ -14,6 +14,7 @@ $(call inherit-product-if-exists, vendor/xiaomi/raphael/raphael-vendor.mk)
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 29
+PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -35,7 +36,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Permissions
 PRODUCT_COPY_FILES += \
-   frameworks/native/data/etc/android.hardware.telephony.ims.xml:system/etc/permissions/android.hardware.telephony.ims.xml
+   frameworks/native/data/etc/android.hardware.telephony.ims.xml:system/etc/permissions/android.hardware.telephony.ims.xml \
+   frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -65,11 +67,8 @@ PRODUCT_PACKAGES += \
     libvulkan
 
 # Fingerprint
-PRODUCT_COPY_FILES += \
-    vendor/exthm/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
-
 PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.raphael
+    exthm.biometrics.fingerprint.inscreen@1.0-service.raphael
 
 # FM
 PRODUCT_PACKAGES += \
@@ -80,7 +79,9 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0
+    android.hidl.manager@1.0 \
+    libhidltransport \
+    libhwbinder
 
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \
@@ -135,9 +136,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.raphael
 
-# Performance
+#Recorder
 PRODUCT_PACKAGES += \
-    powerctl
+    Recorder
+
+# OTA
+PRODUCT_HOST_PACKAGES += \
+    signapk
 
 # Ril
 PRODUCT_PACKAGES += \
@@ -146,7 +151,9 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    vendor/nxp/opensource/sn100x
+    vendor/nxp/opensource/sn100x \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    vendor/qcom/opensource/commonsys/system/bt/conf
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -189,9 +196,11 @@ PRODUCT_PACKAGES += \
     TelecommResCommon \
     TelephonyResCommon
 
+# WiFi
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
+    WifiOverlay
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon

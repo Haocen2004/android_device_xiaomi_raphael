@@ -23,16 +23,21 @@ public class Constants {
     public static final int MSG_CAMERA_CLOSED = 1001;
     public static final int MSG_CAMERA_OPEN = 1002;
 
-    public static final int MOTOR_STATUS_POPUP = 11;
-    public static final int MOTOR_STATUS_POPUP_JAM = 12;
-    public static final int MOTOR_STATUS_TAKEBACK = 13;
-    public static final int MOTOR_STATUS_TAKEBACK_JAM = 14;
+    public static final int MOTOR_STATUS_POPUP_OK = 11;
+    public static final int MOTOR_STATUS_POPUP_JAMMED = 12;
+    public static final int MOTOR_STATUS_TAKEBACK_OK = 13;
+    public static final int MOTOR_STATUS_TAKEBACK_JAMMED = 14;
+    public static final int MOTOR_STATUS_PRESSED = 15;
+    public static final int MOTOR_STATUS_CALIB_OK = 17;
+    public static final int MOTOR_STATUS_CALIB_ERROR = 18;
+    public static final int MOTOR_STATUS_REQUEST_CALIB = 19;
 
     public static final String CLOSE_CAMERA_STATE = "0";
     public static final String OPEN_CAMERA_STATE = "1";
 
     public static final String FRONT_CAMERA_ID = "1";
     public static final String BLUE_LED_PATH = "/sys/class/leds/blue/brightness";
+    public static final String BREATH_LED_PATH = "/sys/class/leds/green/breath";
     public static final String GREEN_LED_PATH = "/sys/class/leds/green/brightness";
     public static final String POPUP_SOUND_PATH = "/system/media/audio/ui/";
 }

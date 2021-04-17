@@ -26,7 +26,8 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#include <cutils/log.h>
+#define LOG_TAG "QTI PowerHAL"
+#include <log/log.h>
 #include <fcntl.h>
 #include <string.h>
 #include <cutils/properties.h>
@@ -34,7 +35,6 @@
 #include <libxml/tree.h>
 #include <unistd.h>
 #include "powerhintparser.h"
-#define LOG_TAG "QTI PowerHAL"
 
 int parsePowerhintXML() {
 

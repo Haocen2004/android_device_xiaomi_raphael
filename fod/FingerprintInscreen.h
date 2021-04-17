@@ -17,7 +17,7 @@
 #ifndef VENDOR_LINEAGE_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H
 #define VENDOR_LINEAGE_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H
 
-#include <vendor/lineage/biometrics/fingerprint/inscreen/1.0/IFingerprintInscreen.h>
+#include <vendor/exthm/biometrics/fingerprint/inscreen/1.0/IFingerprintInscreen.h>
 #include <vendor/xiaomi/hardware/displayfeature/1.0/IDisplayFeature.h>
 #include <vendor/xiaomi/hardware/fingerprintextension/1.0/IXiaomiFingerprint.h>
 
@@ -57,6 +57,9 @@ class FingerprintInscreen : public IFingerprintInscreen {
   private:
     sp<IDisplayFeature> xiaomiDisplayFeatureService;
     sp<IXiaomiFingerprint> xiaomiFingerprintService;
+
+    std::mutex mCallbackLock;
+    sp<IFingerprintInscreenCallback> mCallback;
 };
 
 }  // namespace implementation

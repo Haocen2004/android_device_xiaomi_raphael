@@ -47,11 +47,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.fod.modified.dc_status=false \
     sys.displayfeature.hbm.enable=true
 
+# Enable blurs hidden under dev option
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.supports_background_blur=1 \
+    ro.sf.blurs_are_expensive=1
+
+# Gboard
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.com.google.ime.kb_pad_port_b=1
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
     debug.sf.latch_unsignaled=1 \
-    debug.sf.enable_hwc_vds=1
+    debug.sf.enable_hwc_vds=1 \
+    debug.cpurend.vsync=false
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \

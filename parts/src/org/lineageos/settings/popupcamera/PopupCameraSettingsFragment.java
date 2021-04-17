@@ -16,22 +16,35 @@
 
 package org.lineageos.settings.popupcamera;
 
+import android.app.AlertDialog;
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceFragment;
 
 import org.lineageos.settings.R;
 
-public class PopupCameraSettingsFragment extends PreferenceFragment implements
-        OnPreferenceChangeListener {
+public class PopupCameraSettingsFragment extends PreferenceFragment
+        implements OnPreferenceChangeListener, OnPreferenceClickListener {
+    private Preference mCalibrationPreference;
+    private static final String MOTOR_CALIBRATION_KEY = "motor_calibration";
+
+    private PopupCameraService mPopupCameraService = new PopupCameraService();
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.popup_settings);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+        mCalibrationPreference = (Preference) findPreference(MOTOR_CALIBRATION_KEY);
+        mCalibrationPreference.setOnPreferenceClickListener(this);
     }
 
     @Override
@@ -46,5 +59,31 @@ public class PopupCameraSettingsFragment extends PreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+        if (MOTOR_CALIBRATION_KEY.equals(preference.getKey())) {
+            MotorCalibrationWarningDialog fragment = new MotorCalibrationWarningDialog();
+            fragment.show(getFragmentManager(), "motor_calibration_warning_dialog");
+            return true;
+        }
+        return false;
+    }
+
+    private class MotorCalibrationWarningDialog extends DialogFragment {
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.popup_calibration_warning_title)
+                    .setMessage(R.string.popup_calibration_warning_text)
+                    .setPositiveButton(R.string.popup_camera_calibrate_now,
+                            (dialog, which) -> {
+                                mPopupCameraService.calibrateMotor();
+                                dialog.cancel();
+                            })
+                    .setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.cancel())
+                    .create();
+        }
     }
 }
